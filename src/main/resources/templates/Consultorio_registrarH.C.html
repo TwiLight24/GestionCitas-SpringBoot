@@ -237,40 +237,40 @@
                                 Formulario Historial Clinico
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form th:action="@{/consultorio/historialformulario}" th:object="${histClinico}" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="form-label">Paciente: </label>
-                                            <input placeholder="Seleccione Paciente" class="form-control" type="text">
+                                            <input th:field="*{nombre}" placeholder="Seleccione Paciente" class="form-control" type="text">
                                         </div>
                                         <div class="col-md-6">
                                             <label  class="form-label">Ocupacion: </label>
-                                            <input placeholder="Ingrese Ocupacion" class="form-control" type="text">
+                                            <input th:field="*{ocupacion}" placeholder="Ingrese Ocupacion" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label  class="form-label">Fecha: </label>
-                                            <input placeholder="Ingrese Fecha" class="form-control" type="text">
+                                            <input th:field="*{fecha}" placeholder="Ingrese Fecha" class="form-control" type="text">
                                         </div>
                                         <div class="col-md-4">
                                             <label  class="form-label">F.Nacimiento: </label>
-                                            <input placeholder="Ingrese F.Nacimiento" class="form-control" type="text">
+                                            <input th:field="*{fechaNacimiento}" placeholder="Ingrese F.Nacimiento" class="form-control" type="text">
                                         </div>
                                         <div class="col-md-4">
                                             <label  class="form-label">Genero: </label>
-                                            <input placeholder="Ingrese Genero" class="form-control" type="text">
+                                            <input th:field="*{genero}" placeholder="Ingrese Genero" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label  class="form-label">Comentarios: </label>
-                                            <input placeholder="Ingrese Comentarios" class="form-control" type="textarea">
+                                            <input th:field="*{comentario}" placeholder="Ingrese Comentarios" class="form-control" type="textarea">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <button type="button" class="btn btn-info">
+                                            <button type="submit" class="btn btn-info">
                                                 <i class="fa-solid fa-floppy-disk"></i>
                                                 Registrar
                                             </button>
