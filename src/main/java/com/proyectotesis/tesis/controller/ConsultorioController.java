@@ -28,12 +28,14 @@ public class ConsultorioController {
         return "Consultorio_listaClientes.html";
     }
 
+     //METODOS PARA REALIZAR LISTADO DE LOS HISTORIALES MEDICOS------------------------------------
     @RequestMapping("/verhistorial")
     public String Consultorio_VisualizarHistorialClinico(Model model){
-        return "Consultorio_listaH.C.html";
+        model.addAttribute("listahistClinico", histCliniService.listarHistorialClinicos());
+        return "Consultorio_listaH.C";
     }
 
-    //METODOS PARA REALIZAR REGISTRO DE UN HISTORIAL MEDICO------------------------------------
+    //METODOS PARA REALIZAR REGISTRO DE UN HISTORIAL MEDICO---------------------------------------
     @RequestMapping("/reghistorial")
     public String Consultorio_RegistrarHistorialClinico(Model model){
         HistorialClinico histClinico = new HistorialClinico();
@@ -48,7 +50,7 @@ public class ConsultorioController {
         return "redirect:/consultorio/reghistorial";
     }
 
-    //PARA VISUALIZAR LOS MODELOS PARA GRAFICOS-------------------------------------------------
+    //PARA VISUALIZAR LOS MODELOS PARA GRAFICOS---------------------------------------------------
     @RequestMapping("/prueba")
     public String prueba(Model model){
         return "tables.html";

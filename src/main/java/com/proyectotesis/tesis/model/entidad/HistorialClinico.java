@@ -26,7 +26,7 @@ public class HistorialClinico implements Serializable{
     @Column(name = "hc_fecha")
     private String fecha;
  
-    @Column(name = "hc_fechaNacimiento")
+    @Column(name = "hc_fechanacimiento")
     private String fechaNacimiento;
 
     @Column(name = "hc_genero")
