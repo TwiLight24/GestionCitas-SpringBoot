@@ -2,9 +2,11 @@ package com.proyectotesis.tesis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.proyectotesis.tesis.correo.enviarCorreo;
 import com.proyectotesis.tesis.model.entidad.HistorialClinico;
 import com.proyectotesis.tesis.model.servicio.IHistorialClinicoService;
 
@@ -16,6 +18,21 @@ public class ConsultorioController {
 
     @Autowired
     private IHistorialClinicoService histCliniService;
+
+    @Autowired
+    private enviarCorreo emailService;
+
+    @GetMapping("/send-email")
+    public String sendEmail() {
+        emailService.sendHtmlEmail("se_edu@hotmail.com", "PRUEBA ENVIO DE CORREO", "<html><body>" +
+        "<h1>Estimado cliente, buenos días.</h1>" +
+        "<p>Se presenta su muestra de datos informáticos.</p>" +
+        "<p>En caso de presentar inconvenientes, por favor informar.</p>" +
+        "</body></html>");
+
+        return "Consultorio_listaH.C";
+    }
+
 
     @RequestMapping("/")
     public String inicio(Model model){
@@ -38,6 +55,7 @@ public class ConsultorioController {
     //METODOS PARA REALIZAR REGISTRO DE UN HISTORIAL MEDICO---------------------------------------
     @RequestMapping("/reghistorial")
     public String Consultorio_RegistrarHistorialClinico(Model model){
+        
         HistorialClinico histClinico = new HistorialClinico();
         model.addAttribute("histClinico", histClinico);
         
