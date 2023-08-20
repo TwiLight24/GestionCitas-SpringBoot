@@ -91,12 +91,12 @@ public class ConsultorioController {
 
         try {
             FileOutputStream archivo;
-            File file = new File("src/main/resources/static/img/prueba.pdf");
+            File file = new File("src/main/resources/static/img/HistorialClinico.pdf");
             archivo = new FileOutputStream(file);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance("src/main/resources/static/img/perfil.png");
+            Image img = Image.getInstance("src/main/resources/static/img/logo.png");
 
             Paragraph fecha = new Paragraph();
             //Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLUE);
@@ -107,21 +107,22 @@ public class ConsultorioController {
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
             Encabezado.getDefaultCell().setBorder(0);
-            float[] ColumnaEncabezado = new float[]{20f, 30f, 70f, 40f};
+            float[] ColumnaEncabezado = new float[]{50f, 10f, 60f, 50f};
             Encabezado.setWidths(ColumnaEncabezado);
             Encabezado.setHorizontalAlignment(Element.ALIGN_CENTER);
 
             Encabezado.addCell(img);
 
-            String ruc = "20232332441";
-            String nom = "Sebastian Quispe";
+            String apellidos = "Quispe Molina";
+            String nombre = "Sebastian Eduardo";
             String tel = "969834193";
-            String dir = "Lima";
+            String correo = "prueba@gmail.com";
             String ra = "Vida Informatica";
 
             Encabezado.addCell("");
-            Encabezado.addCell("Ruc: "+ruc+"\nNombre: "+nom+"\nTelefono: "+tel+"Direccion: "+dir+"\nRazon:"+ra);
-            Encabezado.addCell(fecha);
+            Encabezado.addCell("Apellidos: "+apellidos+"\n\nNombres: "+nombre);
+            //Encabezado.addCell(fecha);
+            Encabezado.addCell("Telefono: "+tel+"\n\nCorreo: "+correo);
             doc.add(Encabezado);
 
             doc.close();
