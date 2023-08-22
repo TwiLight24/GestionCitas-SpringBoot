@@ -21,6 +21,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.proyectotesis.tesis.correo.enviarCorreo;
 import com.proyectotesis.tesis.model.entidad.HistorialClinico;
 import com.proyectotesis.tesis.model.servicio.IHistorialClinicoService;
+import com.proyectotesis.tesis.model.servicio.IPacienteService;
 
 import org.springframework.ui.Model;
 
@@ -30,6 +31,9 @@ public class ConsultorioController {
 
     @Autowired
     private IHistorialClinicoService histCliniService;
+
+    @Autowired
+    private IPacienteService pacienteService;
 
     @Autowired
     private enviarCorreo emailService;
@@ -71,6 +75,8 @@ public class ConsultorioController {
         HistorialClinico histClinico = new HistorialClinico();
         model.addAttribute("histClinico", histClinico);
         
+        model.addAttribute("listaPaciente", pacienteService.listarPaciente());
+
         return "Consultorio_registrarH.C";
     }
 

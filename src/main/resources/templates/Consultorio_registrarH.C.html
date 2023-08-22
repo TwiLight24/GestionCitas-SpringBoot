@@ -240,6 +240,18 @@
                                 <form th:action="@{/consultorio/historialformulario}" th:object="${histClinico}" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
+                                            <select>
+                                                <option th:each="paciente : ${listaPaciente}"
+                                                th:value = "${paciente.dni}"
+                                                th:text = "${paciente.nombre}"
+                                                ></option>
+                                            </select>
+                                            <label class="form-label">Dni Paciente: </label>
+                                            <input th:field="*{dniPaciente}" placeholder="Seleccione Paciente" class="form-control" type="text">
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-md-6">
                                             <label class="form-label">Dni Paciente: </label>
                                             <input th:field="*{dniPaciente}" placeholder="Seleccione Paciente" class="form-control" type="text">
                                         </div>
