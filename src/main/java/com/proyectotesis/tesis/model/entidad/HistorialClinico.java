@@ -10,31 +10,46 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "histo_clinicos") //Poner el nombre de la tabla en sql
-public class HistorialClinico implements Serializable{
+@Table(name = "histo_clinicos") // Poner el nombre de la tabla en sql
+public class HistorialClinico implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "hc_id")
     private Long Id;
 
-    @Column(name = "hc_nombre")
-    private String nombre;
+    @Column(name = "hc_idpaciente")
+    private String dniPaciente;
 
-    @Column(name = "hc_ocupacion")
-    private String ocupacion;
+    @Column(name = "hc_nompaciente")
+    private String nomPaciente;
 
     @Column(name = "hc_fecha")
     private String fecha;
- 
-    @Column(name = "hc_fechanacimiento")
-    private String fechaNacimiento;
 
-    @Column(name = "hc_genero")
-    private String genero;
+    @Column(name = "hc_tmpenfermedad")
+    private String tmpEnfermedad;
 
-    @Column(name = "hc_comentario")
-    private String comentario;
-    
+    @Column(name = "hc_motivoconsult")
+    private String motivoConsulta;
+
+    @Column(name = "hc_sintomas")
+    private String sintomas;
+
+    @Column(name = "hc_fomrinicio")
+    private String formaInicio;
+
+    @Column(name = "hc_antefamiliares")
+    private String anteFamiliares;
+
+    @Column(name = "hc_antepersonales")
+    private String antePersonales;
+
+    @Column(name = "hc_tratamiento")
+    private String tratamiento;
+
+    @Column(name = "hc_nomdoctor")
+    private String nomDoctor;
+
     public Long getId() {
         return Id;
     }
@@ -43,20 +58,20 @@ public class HistorialClinico implements Serializable{
         Id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getDniPaciente() {
+        return dniPaciente;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setDniPaciente(String dniPaciente) {
+        this.dniPaciente = dniPaciente;
     }
 
-    public String getOcupacion() {
-        return ocupacion;
+    public String getNomPaciente() {
+        return nomPaciente;
     }
 
-    public void setOcupacion(String ocupacion) {
-        this.ocupacion = ocupacion;
+    public void setNomPaciente(String nomPaciente) {
+        this.nomPaciente = nomPaciente;
     }
 
     public String getFecha() {
@@ -67,28 +82,70 @@ public class HistorialClinico implements Serializable{
         this.fecha = fecha;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getTmpEnfermedad() {
+        return tmpEnfermedad;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setTmpEnfermedad(String tmpEnfermedad) {
+        this.tmpEnfermedad = tmpEnfermedad;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getMotivoConsulta() {
+        return motivoConsulta;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setMotivoConsulta(String motivoConsulta) {
+        this.motivoConsulta = motivoConsulta;
     }
 
-    public String getComentario() {
-        return comentario;
+    public String getSintomas() {
+        return sintomas;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setSintomas(String sintomas) {
+        this.sintomas = sintomas;
     }
+
+    public String getFormaInicio() {
+        return formaInicio;
+    }
+
+    public void setFormaInicio(String formaInicio) {
+        this.formaInicio = formaInicio;
+    }
+
+    public String getAnteFamiliares() {
+        return anteFamiliares;
+    }
+
+    public void setAnteFamiliares(String anteFamiliares) {
+        this.anteFamiliares = anteFamiliares;
+    }
+
+    public String getAntePersonales() {
+        return antePersonales;
+    }
+
+    public void setAntePersonales(String antePersonales) {
+        this.antePersonales = antePersonales;
+    }
+
+    public String getTratamiento() {
+        return tratamiento;
+    }
+
+    public void setTratamiento(String tratamiento) {
+        this.tratamiento = tratamiento;
+    }
+
+    public String getNomDoctor() {
+        return nomDoctor;
+    }
+
+    public void setNomDoctor(String nomDoctor) {
+        this.nomDoctor = nomDoctor;
+    }
+
+    
 
 }

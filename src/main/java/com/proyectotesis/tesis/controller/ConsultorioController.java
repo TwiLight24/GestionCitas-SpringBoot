@@ -117,7 +117,7 @@ public class ConsultorioController {
             String nombre = "Sebastian Eduardo";
             String tel = "969834193";
             String correo = "prueba@gmail.com";
-            String ra = "Vida Informatica";
+            
 
             Encabezado.addCell("");
             Encabezado.addCell("Apellidos: "+apellidos+"\n\nNombres: "+nombre);
