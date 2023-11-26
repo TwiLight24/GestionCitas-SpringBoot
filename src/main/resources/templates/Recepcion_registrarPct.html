@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head th:replace="layout/fragmentos :: cabecera">
+<head th:replace="layout/Recepcion_fragmentos :: cabecera_recepcion">
 </head>
 
 <body id="page-top">
@@ -87,98 +87,86 @@
                 </nav>
                 <!-- FIN ENCABEZADO -->
 
-                <!-- EMPIEZA EL CONTEDIO -->
+                <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <!-- ENCABEZADO -->
+
+                    <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">REGISTRO DE CITA</h1>
                     </div>
 
-                    <div class="container-fluid">
-                        <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Categoria</h1>
-                        </div> -->
-    
-                        <div class="card mt-3">
+                    <div class="container">
+                        <div class="card">
                             <div class="card-header">
                                 Formulario Registro de Cita
                             </div>
                             <div class="card-body">
-                                <form th:action="" th:object="" method="post">
+                                <form th:action="@{/recepcion/recepcionformulario}" th:object="${pacientes}" method="post">
+                                    <!-- Tipo de Documento -->
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <select>
-                                                <option th:each=""
-                                                th:value = ""
-                                                th:text = ""
-                                                ></option>
+                                        <div class="column">
+                                            <label>Tipo de Documento: </label>
+                                            <select name="tipoDocumento">
+                                                <option value="DNI">DNI</option>
+                                                <option value="Pasaporte">Pasaporte</option>
+                                                <!-- Otros tipos de documento -->
                                             </select>
-                                            <label class="form-label">Dni Paciente: </label>
-                                            <input th:field="" placeholder="Seleccione Paciente" class="form-control" type="text">
                                         </div>
-                                    </div><br>
+                                    </div>
+                    
+                                    <!-- DNI y Nombre -->
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="form-label">Dni Paciente: </label>
-                                            <input th:field="" placeholder="Seleccione Paciente" class="form-control" type="text">
+                                        <div class="column">
+                                            <label>DNI Paciente: </label>
+                                            <input th:field="*{dniPaciente}" placeholder="Ingrese DNI del Paciente" type="text">
                                         </div>
-                                        <div class="col-md-6">
-                                            <label  class="form-label">Nombre Paciente: </label>
-                                            <input th:field="" placeholder="Ingrese Ocupacion" class="form-control" type="text">
+                                        <div class="column">
+                                            <label>Nombre Paciente: </label>
+                                            <input th:field="*{nomPaciente}" placeholder="Ingrese Nombre del Paciente" type="text">
                                         </div>
-                                    </div><br>
+                                    </div>
+                    
+                                    <!-- Apellido y Teléfono -->
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <label  class="form-label">Fecha: </label>
-                                            <input th:field="" placeholder="Ingrese Fecha" class="form-control" type="datetime-local">
+                                        <div class="column">
+                                            <label>Apellido Paciente: </label>
+                                            <input th:field="*{apePaciente}" placeholder="Ingrese Apellido del Paciente" type="text">
                                         </div>
-                                        <div class="col-md-4">
-                                            <label  class="form-label">Tipo de enfermedad: </label>
-                                            <input th:field="" placeholder="Ingrese Fecha" class="form-control" type="text">
+                                        <div class="column">
+                                            <label>Teléfono: </label>
+                                            <input th:field="*{prefijoTelefono}" placeholder="Prefijo" type="tel" style="width: 30%;">
+                                            <input th:field="*{celularPaciente}" placeholder="Número de teléfono" type="tel" style="width: 70%;">
                                         </div>
-                                        <div class="col-md-4">
-                                            <label  class="form-label">Motivo de consulta: </label>
-                                            <input th:field="" placeholder="Ingrese F.Nacimiento" class="form-control" type="text">
-                                        </div>
-                                    </div><br>
+                                    </div>
+                    
+                                    <!-- Correo y Fecha de Cita -->
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <label  class="form-label">Sintomas: </label>
-                                            <input th:field="" placeholder="Ingrese Genero" class="form-control" type="text">
+                                        <div class="column">
+                                            <label>Correo Electrónico: </label>
+                                            <input th:field="*{correoPaciente}" placeholder="Correo Electrónico" type="text">
                                         </div>
-                                        <div class="col-md-6">
-                                            <label  class="form-label">Forma de inicio los sintomas: </label>
-                                            <input th:field="" placeholder="Ingrese Comentarios" class="form-control" type="text">
+                                        <div class="column">
+                                            <label>Fecha de Cita: </label>
+                                            <input th:field="*{fechaCita}" type="date">
                                         </div>
-                                    </div><br>
+                                    </div>
+                    
+                                    <!-- Edad y Fecha de Nacimiento -->
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <label  class="form-label">Antecedentes Familiares: </label>
-                                            <input th:field="" placeholder="Ingrese Comentarios" class="form-control" type="text">
+                                        <div class="column">
+                                            <label>Edad: </label>
+                                            <input th:field="*{edadPaciente}" type="text">
                                         </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label  class="form-label">Antecedentes Personales: </label>
-                                            <input th:field="" placeholder="Ingrese Comentarios" class="form-control" type="text">
+                                        <div class="column">
+                                            <label>Fecha de Nacimiento: </label>
+                                            <input th:field="*{fechaNacimiento}" type="date">
                                         </div>
-                                    </div><br>
+                                    </div>
+                    
+                                    <!-- Botón de Registro -->
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <label  class="form-label">Tratamiento dado: </label>
-                                            <input th:field="" placeholder="Ingrese Comentarios" class="form-control" type="text">
-                                        </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label  class="form-label">Nombre del doctor: </label>
-                                            <input th:field="" placeholder="Ingrese Fecha" class="form-control" type="text">
-                                        </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <button type="submit" class="btn btn-info">
-                                                <i class="fa-solid fa-floppy-disk"></i>
+                                        <div class="column text-center">
+                                            <button type="submit">
                                                 Registrar
                                             </button>
                                         </div>
@@ -186,14 +174,9 @@
                                 </form>
                             </div>
                         </div>
-                   </div>
-
-
-
-
-
-
-
+                    </div>
+                
+                    <!-- End of Main Content -->
 
                 </div>
                 <!-- /.container-fluid -->

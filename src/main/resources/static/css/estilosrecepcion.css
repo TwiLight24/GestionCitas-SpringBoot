@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #e2e6ea; /* Fondo más claro para contraste */
+}
+
+.container {
+    width: 90%; /* Un poco más estrecho para no ocupar toda la pantalla */
+    max-width: 1500px; /* Máximo ancho del contenedor */
+    margin: 2rem auto;
+
+}
+
+.card {
+    border: 1px solid #d3d9df;
+    border-radius: 0.5rem; /* Bordes más redondeados */
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); /* Sombra más suave */
+}
+
+.card-header {
+    font-size: 1.5rem; /* Tamaño de letra más grande para el título */
+    margin-bottom: 1rem;
+    background-color: #f7f7f9;
+    border-bottom: 1px solid #e1e4e8;
+    border-top-left-radius: 0.5rem; /* Bordes redondeados */
+    border-top-right-radius: 0.5rem;
+    padding: 0.75rem 1rem; /* Espaciado interno */
+}
+
+.card-body {
+    line-height: 1.8; /* Mayor línea de altura para mejor legibilidad */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem; /* Más espacio entre filas */
+}
+
+.column {
+    padding: 0 0.5rem; /* Espaciado interno de las columnas */
+    flex: 1;
+    min-width: 250px; /* Ancho mínimo para responsividad */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+button {
+    width: 100%;
+    padding: 0.75rem 1rem; /* Más padding para mejor tacto */
+    margin-bottom: 1rem; /* Más espacio entre campos */
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem; /* Bordes más redondeados para los inputs */
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: all 0.2s; /* Transición suave para efectos de interacción */
+}
+
+/* Acentuar el enfoque en los campos para mejorar la usabilidad */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+button {
+    color: #fff;
+    background-color: #0069d9; /* Color más suave para el botón */
+    border-color: #005cbf;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el cursor */
+    border-color: #004085;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Mejoras para la responsividad */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .column {
+        max-width: 100%;
+        flex-basis: 100%; /* Ocupa el ancho completo en dispositivos pequeños */
+    }
+}

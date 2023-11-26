@@ -6,4 +6,6 @@ import com.proyectotesis.tesis.model.entidad.Paciente;
 
 public interface IPacienteService {
     public List<Paciente> listarPaciente();
+    public void guardarPaciente (Paciente paciente);
+    public Paciente buscarPersona(Long id);
 }
