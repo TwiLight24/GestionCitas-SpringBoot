@@ -101,7 +101,7 @@
                                 Formulario Registro de Cita
                             </div>
                             <div class="card-body">
-                                <form th:action="@{/recepcion/recepcionformulario}" th:object="${pacientes}" method="post">
+                                <form>
                                     <!-- Tipo de Documento -->
                                     <div class="row">
                                         <div class="column">
@@ -118,11 +118,11 @@
                                     <div class="row">
                                         <div class="column">
                                             <label>DNI Paciente: </label>
-                                            <input th:field="*{dniPaciente}" placeholder="Ingrese DNI del Paciente" type="text">
+                                            <input placeholder="Ingrese DNI del Paciente" type="text">
                                         </div>
                                         <div class="column">
                                             <label>Nombre Paciente: </label>
-                                            <input th:field="*{nomPaciente}" placeholder="Ingrese Nombre del Paciente" type="text">
+                                            <input  placeholder="Ingrese Nombre del Paciente" type="text">
                                         </div>
                                     </div>
                     
@@ -130,12 +130,12 @@
                                     <div class="row">
                                         <div class="column">
                                             <label>Apellido Paciente: </label>
-                                            <input th:field="*{apePaciente}" placeholder="Ingrese Apellido del Paciente" type="text">
+                                            <input placeholder="Ingrese Apellido del Paciente" type="text">
                                         </div>
                                         <div class="column">
                                             <label>Teléfono: </label>
-                                            <input th:field="*{prefijoTelefono}" placeholder="Prefijo" type="tel" style="width: 30%;">
-                                            <input th:field="*{celularPaciente}" placeholder="Número de teléfono" type="tel" style="width: 70%;">
+                                            <input placeholder="Prefijo" type="tel" style="width: 30%;">
+                                            <input placeholder="Número de teléfono" type="tel" style="width: 70%;">
                                         </div>
                                     </div>
                     
@@ -143,11 +143,11 @@
                                     <div class="row">
                                         <div class="column">
                                             <label>Correo Electrónico: </label>
-                                            <input th:field="*{correoPaciente}" placeholder="Correo Electrónico" type="text">
+                                            <input placeholder="Correo Electrónico" type="text">
                                         </div>
                                         <div class="column">
                                             <label>Fecha de Cita: </label>
-                                            <input th:field="*{fechaCita}" type="date">
+                                            <input type="date">
                                         </div>
                                     </div>
                     
@@ -155,18 +155,18 @@
                                     <div class="row">
                                         <div class="column">
                                             <label>Edad: </label>
-                                            <input th:field="*{edadPaciente}" type="text">
+                                            <input type="text">
                                         </div>
                                         <div class="column">
                                             <label>Fecha de Nacimiento: </label>
-                                            <input th:field="*{fechaNacimiento}" type="date">
+                                            <input type="date">
                                         </div>
                                     </div>
                     
                                     <!-- Botón de Registro -->
                                     <div class="row">
                                         <div class="column text-center">
-                                            <button type="submit">
+                                            <button type="  ">
                                                 Registrar
                                             </button>
                                         </div>
