@@ -237,80 +237,79 @@
                                 Formulario Historial Clinico
                             </div>
                             <div class="card-body">
-                                <form th:action="@{/consultorio/historialformulario}" th:object="${histClinico}" method="post">
+                                <form >
                                     <div class="row">
                                         <div class="col-md-6">
                                             <select>
-                                                <option th:each="paciente : ${listaPaciente}"
-                                                th:value = "${paciente.dni}"
-                                                th:text = "${paciente.nombre}"
-                                                ></option>
+                                                <option>
+
+                                                </option>
                                             </select>
                                             <label class="form-label">Dni Paciente: </label>
-                                            <input th:field="*{dniPaciente}" placeholder="Seleccione Paciente" class="form-control" type="text">
+                                            <input placeholder="Seleccione Paciente" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="form-label">Dni Paciente: </label>
-                                            <input th:field="*{dniPaciente}" placeholder="Seleccione Paciente" class="form-control" type="text">
+                                            <input placeholder="Seleccione Paciente" class="form-control" type="text">
                                         </div>
                                         <div class="col-md-6">
                                             <label  class="form-label">Nombre Paciente: </label>
-                                            <input th:field="*{nomPaciente}" placeholder="Ingrese Ocupacion" class="form-control" type="text">
+                                            <input placeholder="Ingrese Ocupacion" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label  class="form-label">Fecha: </label>
-                                            <input th:field="*{fecha}" placeholder="Ingrese Fecha" class="form-control" type="datetime-local">
+                                            <input placeholder="Ingrese Fecha" class="form-control" type="datetime-local">
                                         </div>
                                         <div class="col-md-4">
                                             <label  class="form-label">Tipo de enfermedad: </label>
-                                            <input th:field="*{tmpEnfermedad}" placeholder="Ingrese Fecha" class="form-control" type="text">
+                                            <input placeholder="Ingrese Fecha" class="form-control" type="text">
                                         </div>
                                         <div class="col-md-4">
                                             <label  class="form-label">Motivo de consulta: </label>
-                                            <input th:field="*{motivoConsulta}" placeholder="Ingrese F.Nacimiento" class="form-control" type="text">
+                                            <input placeholder="Ingrese F.Nacimiento" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label  class="form-label">Sintomas: </label>
-                                            <input th:field="*{sintomas}" placeholder="Ingrese Genero" class="form-control" type="text">
+                                            <input placeholder="Ingrese Genero" class="form-control" type="text">
                                         </div>
                                         <div class="col-md-6">
                                             <label  class="form-label">Forma de inicio los sintomas: </label>
-                                            <input th:field="*{formaInicio}" placeholder="Ingrese Comentarios" class="form-control" type="text">
+                                            <input  placeholder="Ingrese Comentarios" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label  class="form-label">Antecedentes Familiares: </label>
-                                            <input th:field="*{anteFamiliares}" placeholder="Ingrese Comentarios" class="form-control" type="text">
+                                            <input placeholder="Ingrese Comentarios" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label  class="form-label">Antecedentes Personales: </label>
-                                            <input th:field="*{antePersonales}" placeholder="Ingrese Comentarios" class="form-control" type="text">
+                                            <input placeholder="Ingrese Comentarios" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label  class="form-label">Tratamiento dado: </label>
-                                            <input th:field="*{tratamiento}" placeholder="Ingrese Comentarios" class="form-control" type="text">
+                                            <input placeholder="Ingrese Comentarios" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label  class="form-label">Nombre del doctor: </label>
-                                            <input th:field="*{nomDoctor}" placeholder="Ingrese Fecha" class="form-control" type="text">
+                                            <input placeholder="Ingrese Fecha" class="form-control" type="text">
                                         </div>
                                     </div><br>
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <button type="submit" class="btn btn-info">
+                                            <button type="" class="btn btn-info">
                                                 <i class="fa-solid fa-floppy-disk"></i>
                                                 Registrar
                                             </button>
